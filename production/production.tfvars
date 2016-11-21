@@ -1,0 +1,5 @@
+access_key = ""
+secret_key = ""
+route53_zone = "Z3BEKLYDPKNUOS"
+domain_name = "helloworld.frecra.com"
+internal_domain_name = "helloworld.frecra.com"
