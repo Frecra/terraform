@@ -13,7 +13,7 @@ variable "aws_amis" {
   type = "map"
   default = {
     eu-west-1 = "ami-bd4914ce"
-    us-east-1 = "ami-b73b63a0"
+    us-east-1 = "ami-88d6e09f"
   }
 }
 
