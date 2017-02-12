@@ -1,0 +1,4 @@
+#cloud-config
+apt_upgrade: true
+packages:
+  - apache2

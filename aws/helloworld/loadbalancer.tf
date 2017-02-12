@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "${var.aws_region}"
-}
-
 # Create a new load balancer
 resource "aws_elb" "public" {
   name = "helloworld-elb"
@@ -41,25 +37,3 @@ resource "aws_elb" "public" {
     Name = "Main ELB"
   }
 }
-
-resource "aws_instance" "helloworld_server" {
-  tags {
-    Name = "HelloWorld Server"
-  }
-  key_name      = "${lookup(var.key_name, var.aws_region)}"
-  ami           = "${lookup(var.aws_amis, var.aws_region)}"
-  instance_type = "t2.micro"
-  subnet_id     = "${aws_subnet.private1.id}"
-  security_groups = ["${aws_security_group.private_http_access.id}", "${aws_security_group.private_ssh.id}"]
-}
-
-
-resource "aws_route53_record" "helloworld" {
-  zone_id = "${var.route53_zone}"
-  name = "${var.domain_name}"
-  type = "CNAME"
-  ttl = "300"
-  records = ["${aws_elb.public.dns_name}"]
-}
-
-
