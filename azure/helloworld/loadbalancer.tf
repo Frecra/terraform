@@ -35,7 +35,7 @@ resource "azurerm_lb_probe" "helloworld" {
 
 //check if we can put in refer for frontend_ip_configuration_name
 resource "azurerm_lb_rule" "test" {
-  location = "West US"
+  location = "West Europe"
   resource_group_name = "${azurerm_resource_group.helloworld.name}"
   loadbalancer_id = "${azurerm_lb.helloworldlb.id}"
   name = "LBRule"
