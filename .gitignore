@@ -1,7 +1,7 @@
 # Compiled files
 *.tfstate
 *.tfstate.backup
-.idea
+.idea/
 *.tfvars
 production/.terraform/
 
